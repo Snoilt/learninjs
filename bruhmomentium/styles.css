@@ -1,0 +1,21 @@
+html {
+  background-color:#111111;
+}
+
+#stupid {
+font-family: 'Roboto', sans-serif;
+text-align: center;
+transition: 0.3s;
+color: white;
+}
+
+#things {
+
+  transition: 0.3s;
+  border-radius:  25px;
+  margin: auto;
+  display: block;
+  margin-top: 100px;
+  width: 500px;
+  height: 300px;
+}
