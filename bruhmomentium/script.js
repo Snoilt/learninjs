@@ -1,35 +1,46 @@
-
-function makebig() {
-  const textman = document.querySelector("#stupid")
-  const all = document.querySelector("#things")
-
-  if (textman.style.fontSize === "") { //checks for initial state
-    textman.style.fontSize = "140px" //mak bru bick
-    all.style.height = "400px"
-    all.style.width = "1000px"  //img size
-    all.src = "dick.png"
+ree = document.querySelector(".inputnigger")
+ree.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault()
+    document.querySelector(".cock").click()
   }
-  else {                                  //if everything big this makes smol
-    textman.style.fontSize = ""
-    all.style.width = "500px"
-    all.style.height = "300px"
-    all.src = "allthingsmustgo.png"
+})
+
+function setxt() {
+  problem = document.querySelector(".inputnigger").value
+  bruhmoment = problem.split("")
+  meths = ["+", "-", "/", "*"]
+  sign = meths.find((i) => bruhmoment.includes(i))
+}
+
+function chech() {
+  if (meths.some((i) => bruhmoment.includes(i) === true)) {
+    calculate()
+  }
+  else {
+    alert("bruh u stupid lmao")
   }
 }
 
-const database = firebase.database() //firebase told me to do this
+function calculate() {
+  pos = bruhmoment.indexOf(meths.find((i) => bruhmoment.includes(i)))
+  val1 = parseInt(bruhmoment.slice("", pos).join(""))
+  val2 = parseInt(bruhmoment.slice(pos + 1).join(""))
+  let neggar = document.querySelector(".inputnigger")
 
-function bruhmoment(userId, name, emai) {  //first test basically firebase example
+  if(sign == "+") {
+    manyea = val1 + val2
+  }
+  else if(sign == "-") {
+    manyea = val1 - val2
+  }
+  else if(sign == "*") {
+    manyea = val1 * val2
+  }
+  else if (sign == "/") {
+    manyea = val1 / val2
+  }
 
-  name = document.querySelector("#username").value
-  email = document.querySelector("#email").value
-
-
-  database.ref().set({
-    username: name,
-    email: email,
-  })
+  document.querySelector(".inputnigger").value = manyea
 }
-
-
 

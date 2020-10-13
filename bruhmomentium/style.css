@@ -1,0 +1,36 @@
+html {
+  background-color: #111111;
+  font-family: 'Fira Code', monospace;
+}
+
+.ueber {
+  color:#FFF;
+  letter-spacing: 20px;
+  text-align: center;
+}
+
+.inputnigger {
+  font-family: 'Fira Code', monospace;
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  width:30%;
+  height:40px;
+  border-radius:10px;
+  outline: none;
+  border: none;
+  background-color: #212121;
+  color:#FFF;
+  transition: 0.3s;
+  font-size:1.5em;
+  text-align:center;
+}
+
+.inputnigger:focus {
+  background-color: #494949;
+}
+
+.cock{
+  visibility: hidden;
+}
+
