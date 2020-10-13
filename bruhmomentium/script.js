@@ -18,19 +18,18 @@ function makebig() {
 }
 
 const database = firebase.database() //firebase told me to do this
-function bruhmoment(userId, name, email, imageUrl) {  //first test basically firebase example
+
+function bruhmoment(userId, name, emai) {  //first test basically firebase example
 
   name = document.querySelector("#username").value
   email = document.querySelector("#email").value
-  imageUrl = document.querySelector("#imageUrl").value
-  userId = document.querySelector("#userId").value
 
-  database.ref("users/" + userId).set({
+
+  database.ref().set({
     username: name,
     email: email,
   })
 }
-
 
 
 

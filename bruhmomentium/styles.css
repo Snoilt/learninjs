@@ -41,7 +41,7 @@ color: white;
   background-color:#414141;
 }
 
-.submit {
+.button {
   height:40px;
   width:10%;
   display:block;
@@ -49,13 +49,14 @@ color: white;
   background-color: #212121;
   border-radius: 10px;
   transition:0.2s;
+  margin-top:10px;
 }
 
-.submit:hover {
+.button:hover {
 background-color:#414141;
 }
 
-.submit:active {
+.button:active {
 background-color: aqua;
 }
 
@@ -63,6 +64,6 @@ background-color: aqua;
   text-align:center;
   color:#FFF;
   font-size:1.5em;
-  padding-top: 5px;
+  padding-top:5px;
 }
 
