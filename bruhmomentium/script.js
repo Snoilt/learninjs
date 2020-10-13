@@ -28,7 +28,6 @@ function bruhmoment(userId, name, email, imageUrl) {  //first test basically fir
   database.ref("users/" + userId).set({
     username: name,
     email: email,
-    profile_picture: imageUrl,
   })
 }
 
