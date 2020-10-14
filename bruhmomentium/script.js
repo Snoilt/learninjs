@@ -1,18 +1,19 @@
-ree = document.querySelector(".inputnigger")
+ree = document.querySelector(".inputnigger")       
+//listens for enter key(ion rly get this jus copied it and it wrok)     
 ree.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault()
     document.querySelector(".cock").click()
   }
 })
-
+//updates input and makes array and sets all stuff to get goin
 function setxt() {
   problem = document.querySelector(".inputnigger").value
   bruhmoment = problem.split("")
   meths = ["+", "-", "/", "*"]
   sign = meths.find((i) => bruhmoment.includes(i))
 }
-
+//checks for math (tf do (i) mean????)
 function chech() {
   if (meths.some((i) => bruhmoment.includes(i) === true)) {
     calculate()
@@ -21,13 +22,14 @@ function chech() {
     alert("bruh u stupid lmao")
   }
 }
-
+//calculates
 function calculate() {
+  //checks for position of math sign in equation
   pos = bruhmoment.indexOf(meths.find((i) => bruhmoment.includes(i)))
+  //combines values before and after math sign into integers
   val1 = parseInt(bruhmoment.slice("", pos).join(""))
   val2 = parseInt(bruhmoment.slice(pos + 1).join(""))
-  let neggar = document.querySelector(".inputnigger")
-
+  //jus if statements for calculus
   if(sign == "+") {
     manyea = val1 + val2
   }
@@ -40,7 +42,7 @@ function calculate() {
   else if (sign == "/") {
     manyea = val1 / val2
   }
-
-  document.querySelector(".inputnigger").value = manyea
+//change input value to result
+  ree.value = manyea
 }
 
