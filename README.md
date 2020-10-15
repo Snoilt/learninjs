@@ -14,13 +14,20 @@ also that empty calculator folder??? idk how to remove that am new to github
 
 STUFF IT CAN DO:
 -add/div/mul/sub 2 numbers
+
 -give you a roomcode after you have entered smth
+
 -uses roomcode to identify you when you reenter the site(cookie based)
+
 -put roomcode into inputfield to join a different room
 
 
 STUFF IM WORKING ON
+
 -clear function,partly works  (if you put clear into the input field it will clear the results)
+
 -message board (just enter messages in input box and they will appear on your friends screen)
+
 -calculating with () and multiple values (mayb sometime idk)
+
 -fix some weird stuff like the result going out the input box
