@@ -7,6 +7,10 @@ I added firebase since i saw a friend who uses js a fucklot using it before and 
 my code is a mess ngl but it somehow works i guess.
 btw from now on this calc is called calc2gether 
 
+sry if the variables are kinda ass im just that stupid :/
+
+also that empty calculator folder??? idk how to remove that am new to github
+
 
 STUFF IT CAN DO:
 -add/div/mul/sub 2 numbers
