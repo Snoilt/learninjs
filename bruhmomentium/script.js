@@ -19,71 +19,80 @@ function chech() {
   if (meths.some((i) => bruhmoment.includes(i) === true)) {
     calculate()
   }
-  else {
-    alert("bruh u stupid lmao")
-  }
-}
-//calculates
-function calculate() {
-  //checks for position of math sign in equation
-  pos = bruhmoment.indexOf(meths.find((i) => bruhmoment.includes(i)))
-  //combines values before and after math sign into integers
-  val1 = Number(bruhmoment.slice("", pos).join(""))
-  val2 = Number(bruhmoment.slice(pos + 1).join(""))
-  //jus if statements for calculus
-  if(sign == "+") {
-    manyea = val1 + val2
-  }
-  else if(sign == "-") {
-    manyea = val1 - val2
-  }
-  else if(sign == "*") {
-    manyea = val1 * val2
-  }
-  else if (sign == "/") {
-    manyea = val1 / val2
-  }
-
-  let randomnumber = Math.floor(1000 + Math.random() * 9000)
-
-  if (document.querySelector(".roomcode").innerHTML == "") {
-    document.querySelector(".roomcode").innerHTML = randomnumber
-    document.cookie = randomnumber
-  }
-  else {
-
-  }
-
-  roomcode = document.querySelector(".roomcode").innerHTML
-  pushsolution(problem, manyea, roomcode)
-}
-
-function pushsolution(problem, manyea, roomcode) {
-  firebase.database().ref("Rooms/" + roomcode).push({
-    equation: problem,
-    result: manyea
-  })
-}
-
-getdatabaserooms()
-
-function getdatabaserooms() {
-  firebase.database().ref("Rooms/").on("value", function givroomtags(data) {
-    rooms = Object.getOwnPropertyNames(data.val())
+  else if (rooms.includes(problem) == true) {
+    document.cookie = problem
     identify(rooms)
-  })
-}
 
-function identify(rooms) {
-  if (rooms.includes(document.cookie)) {
-    document.querySelector(".roomcode").innerHTML = document.cookie
-    firebase.database().ref("Rooms/").on("value", function historyappear(numbrs) {
-      equationsnresults = numbrs.val()
-      equations = Object.getOwnPropertyNames(equationsnresults[document.cookie])
+  }
+  else if (problem == "clear") {
+    var roomclearer = firebase.database().ref("Rooms/" + document.cookie)
+    roomclearer.child(enrdaddys[1]).remove()
+  }
+}
+  //calculates
+  function calculate() {
+    //checks for position of math sign in equation
+    pos = bruhmoment.indexOf(meths.find((i) => bruhmoment.includes(i)))
+    //combines values before and after math sign into integers
+    val1 = Number(bruhmoment.slice("", pos).join(""))
+    val2 = Number(bruhmoment.slice(pos + 1).join(""))
+    //jus if statements for calculus
+    if (sign == "+") {
+      manyea = val1 + val2
+    }
+    else if (sign == "-") {
+      manyea = val1 - val2
+    }
+    else if (sign == "*") {
+      manyea = val1 * val2
+    }
+    else if (sign == "/") {
+      manyea = val1 / val2
+    }
+
+    let randomnumber = Math.floor(1000 + Math.random() * 9000)
+
+    if (document.querySelector(".roomcode").innerHTML == "") {
+      document.querySelector(".roomcode").innerHTML = randomnumber
+      document.cookie = randomnumber
+    }
+
+    roomcode = document.querySelector(".roomcode").innerHTML
+    pushsolution(problem, manyea, roomcode)
+  }
+
+  function pushsolution(problem, manyea, roomcode) {
+    firebase.database().ref("Rooms/" + roomcode).push({
+      equation: problem,
+      result: manyea
+    })
+
+  }
+
+  getdatabaserooms()
+
+  function getdatabaserooms() {
+    firebase.database().ref("Rooms/").on("value", function givroomtags(data) {
+      rooms = Object.getOwnPropertyNames(data.val())
+      identify(rooms)
     })
   }
-}
+  enr = []
 
+  function identify(rooms) {
+    if (rooms.includes(document.cookie)) {
+      document.querySelector(".roomcode").innerHTML = document.cookie
+      firebase.database().ref("Rooms/").on("value", function historyappear(numbrs) {
+        uselessshite = numbrs.val()
+        closetoequations = uselessshite[document.cookie]
+        enrdaddys = Object.getOwnPropertyNames(closetoequations)
+      })
+    }
 
-
+    for (i = 0; i < enrdaddys.length; i++) {
+      enr.length = i
+      enr.push(closetoequations[enrdaddys[i]].equation + "=" + closetoequations[enrdaddys[i]].result + " <br> ")
+    }
+    document.querySelector(".results").innerHTML = enr.join("")
+  }
 

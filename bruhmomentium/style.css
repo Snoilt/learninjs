@@ -41,6 +41,7 @@ html {
   height:100px;
   background-color:#212121;
   border-radius:10px;
+  margin-bottom:40px;
 }
 
 .results {
@@ -53,3 +54,21 @@ html {
 .roomcode {
   color:white;
 }
+
+.codeentrybox {
+  display:block;
+  margin-top:px;
+  width:30%;
+  height:60px;
+  margin:auto;
+
+}
+
+
+.codentry{
+  margin-top:10px;
+
+}
+
+
+
