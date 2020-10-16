@@ -26,7 +26,10 @@ function chech() {
   }
   else if (problem == "clear") {
     var roomclearer = firebase.database().ref("Rooms/" + document.cookie)
-    roomclearer.child(enrdaddys[1]).remove()
+    for (i = 0; i == enrdaddys.length ; i++) {
+      roomclearer.child(enrdaddys[i]).remove()
+    }
+
   }
 }
   //calculates
